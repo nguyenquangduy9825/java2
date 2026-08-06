@@ -8,7 +8,7 @@ public class DiemCC {
         double diemCC=sc.nextDouble();
         System.out.println("mời nhập điểm giữa kỳ");
         double diemGK=sc.nextDouble();
-        System.out.println("mời nhập điểm cuối kỳ");
+        System.out.println("nhập điểm cuối kỳ");
         double diemCK=sc.nextDouble();
         double  diem=diemCC*0.1+diemGK*0.3+diemCK*0.6;
         if(diem<5){
@@ -17,4 +17,5 @@ public class DiemCC {
         else
             System.out.println("mày đỗ");
     }
+
 }
