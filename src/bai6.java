@@ -1,26 +1,51 @@
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+
 
 public class bai6 {
-    static void main() {
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Nhập số thứ nhất: ");
+    public static void main(String[] args) {
 
-        if (sc.hasNextDouble()) {
-            double a = sc.nextDouble();
+        JFrame frame = new JFrame("Tính tổng 2 số");
+        frame.setSize(400, 250);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
 
-            System.out.print("Nhập số thứ hai: ");
+        JLabel label1 = new JLabel("Số thứ nhất:");
+        JTextField txt1 = new JTextField(10);
 
-            if (sc.hasNextDouble()) {
-                double b = sc.nextDouble();
+        JLabel label2 = new JLabel("Số thứ hai:");
+        JTextField txt2 = new JTextField(10);
 
-                System.out.println("Tổng = " + (a + b));
-            } else {
-                System.out.println("Số thứ hai không phải là số!");
+        JButton btnTinh = new JButton("Tính tổng");
+
+        JLabel ketQua = new JLabel("Kết quả: ");
+
+        btnTinh.addActionListener(e -> {
+
+            try {
+                double a = Double.parseDouble(txt1.getText());
+                double b = Double.parseDouble(txt2.getText());
+
+                double tong = a + b;
+
+                ketQua.setText("Kết quả: " + tong);
+
+            } catch (NumberFormatException ex) {
+                ketQua.setText("Vui lòng nhập số!");
             }
+        });
 
-        } else {
-            System.out.println("Số thứ nhất không phải là số!");
-        }
+        frame.add(label1);
+        frame.add(txt1);
+
+        frame.add(label2);
+        frame.add(txt2);
+
+        frame.add(btnTinh);
+        frame.add(ketQua);
+
+        frame.setVisible(true);
     }
     }
 
