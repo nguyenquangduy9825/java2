@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class bai3 {
     static void main() {
-        System.out.println("nhập vào 1 số nguyên tố");
+        System.out.println("nhập vào 1 số ");
         Scanner matlol = new Scanner(System.in);
         int a = matlol.nextInt();
         if(songuyento(a)){
-            System.out.println("đây là số nguyên tố "+a);
+            System.out.println(+a+"đây là số nguyên tố ");
         }
         else{
             System.out.println("đây ko phải là số nguyên tố");

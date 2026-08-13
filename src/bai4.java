@@ -11,7 +11,7 @@ public class bai4 {
         System.out.println("nhập vào số c");
         double c=ket.nextDouble();
         if (a + b > c && a + c > b && b + c > a) {
-
+            System.out.println("là 3 cạnh của tam giác");
             if (a == b && b == c) {
                 System.out.println("Tam giác đều");
             } else if ((a == b || a == c || b == c) &&
