@@ -16,7 +16,7 @@ public class QLSinhVien {
 
     private JTextArea textArea1;
 
-    // Lưu danh sách sinh viên
+
     private StringBuilder danhSach = new StringBuilder();
 
     public QLSinhVien() {
@@ -79,9 +79,6 @@ public class QLSinhVien {
                 );
             }
         });
-
-
-        // ================= LÀM MỚI =================
         làmMớiButton.addActionListener(e -> {
             xoaTrang();
         });
