@@ -22,8 +22,6 @@ public class TinhTong extends JFrame {
 
         btnCalculate.addActionListener(e -> calculatePrimeSum());
     }
-
-    // Kiểm tra số nguyên tố
     private boolean isPrime(int n) {
 
         if (n < 2) {
@@ -47,13 +45,8 @@ public class TinhTong extends JFrame {
 
         return true;
     }
-
-    // Tính tổng bằng SwingWorker
     private void calculatePrimeSum() {
-
         int n;
-
-        // Kiểm tra dữ liệu nhập
         try {
 
             n = Integer.parseInt(
@@ -79,16 +72,9 @@ public class TinhTong extends JFrame {
 
             return;
         }
-
-        // Khóa nút trong lúc tính
         btnCalculate.setEnabled(false);
-
-        // Reset progress
         progressBar.setValue(0);
-
         lblResult.setText("Đang tính...");
-
-        // SwingWorker
         SwingWorker<Long, Void> worker =
                 new SwingWorker<Long, Void>() {
 
@@ -102,8 +88,6 @@ public class TinhTong extends JFrame {
                             if (isPrime(i)) {
                                 sum += i;
                             }
-
-                            // Tính phần trăm
                             int percent =
                                     (int) (i * 100L / (n - 1));
 
@@ -141,8 +125,6 @@ public class TinhTong extends JFrame {
                         }
                     }
                 };
-
-        // Cập nhật ProgressBar
         worker.addPropertyChangeListener(e -> {
 
             if ("progress".equals(e.getPropertyName())) {
@@ -153,8 +135,6 @@ public class TinhTong extends JFrame {
                 progressBar.setValue(progress);
             }
         });
-
-        // Chạy worker
         worker.execute();
     }
 
